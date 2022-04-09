@@ -34,12 +34,12 @@ Depuis mon point d'entrée index.js à la source, je charge avec react-router-do
 
 Pour la partie recherche, j'ai un découpage en quatre composants :
 
-* **RepoSearch** étant le composant principal qui chargera tous les autres
+* **MainSearch** étant le composant principal qui chargera tous les autres
   * **SearchBar** s'occupe de la barre de recherche de repo
   * **MessageBar** affiche divers message lors de l'utilisation de la recherche, notamment, un message de succès ou d'erreur mais aussi un temps de chargement pendant les requêtes vers l'API
-  * **ReposResult** s'occupe de l'affichage sous forme de carte des repos. Il charge 12 repos, les autres étant accessibles par une navigation précédant/suivant
+  * **ReposList** s'occupe de l'affichage sous forme de carte des repos. Il charge 12 repos, les autres étant accessibles par une navigation précédant/suivant
 
-Pour la partie FAQ, c'est bien plus simple (pour le moment), j'ai un unique composant qui affiche un accordéons de FAQ.
+Pour la partie À propos, c'est bien plus simple (pour le moment), j'ai un composant FAQ qui affiche un accordéons de FAQ et un composant ProfilCard pour mon profil.
 
 ### Amélioration
 

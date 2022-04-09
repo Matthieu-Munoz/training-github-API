@@ -6,8 +6,8 @@ import { Image, Button } from 'semantic-ui-react';
 // == Import : local
 // Composants
 import logo from 'src/assets/images/icon-github.png';
-import RepoSearch from 'src/components/RepoSearch';
-import Faq from 'src/components/Faq';
+import MainSearch from 'src/components/search/MainSearch';
+import Faq from 'src/components/about/Faq';
 
 // == Render
 // 1. Le composant racine (celui qui contient l'ensemble de l'app)
@@ -15,19 +15,19 @@ const rootComponent = (
   <BrowserRouter>
     <div className="app">
       <header className="app__header">
-        <Button content="Recherche" inverted as={Link} to="/usage-api-github/" />
+        <Button content="Recherche" inverted as={Link} to="/" />
         <Image src={logo} size="mini" centered />
-        <Button content="FAQ" inverted as={Link} to="/usage-api-github/faq" />
+        <Button content="A propos" inverted as={Link} to="/about" />
       </header>
       <Routes>
-        <Route path="/usage-api-github/" element={<RepoSearch />} />
-        <Route path="/usage-api-github/faq" element={<Faq />} />
+        <Route path="" element={<MainSearch />} />
+        <Route path="about" element={<Faq />} />
       </Routes>
     </div>
   </BrowserRouter>
 );
-
-// 2. La cible du DOM (là où la structure doit prendre vie dans le DOM)
+// /usage-api-github/
+// /usage-api-github/
 const target = document.getElementById('root');
 // Le rendu de React => DOM
 render(rootComponent, target);

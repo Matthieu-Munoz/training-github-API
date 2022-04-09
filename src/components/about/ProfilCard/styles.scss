@@ -1,0 +1,98 @@
+@use 'src/styles/vars';
+
+.profil_card__me {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  transform: scale(1.1);
+}
+
+.profil_card__me__container {
+  height: 280px;
+  transform: scale(0.48);
+  transition: transform 250ms ease-in-out;
+  width: 400px;
+
+  &:hover {
+    transform: scale(0.54);
+  }
+}
+
+.profil_card__me__container__inner {
+  clip-path: path("M 390,400 C 390,504.9341 304.9341,590 200,590 95.065898,590 10,504.9341 10,400 V 10 H 200 390 Z"
+    );
+  position: relative;
+  transform-origin: 50% bottom;
+  top: -200px;
+
+  &--circle {
+    height: 380px;
+    left: 10px;
+    pointer-events: none;
+    position: absolute;
+    top: 210px;
+  }
+
+  &--img {
+    position: relative;
+    transform: translateY(20px) scale(1.15);
+    transform-origin: 50% bottom;
+    transition: transform 300ms ease-in-out;
+    left: -7px;
+    top: 185px;
+    width: 415px;
+    border-radius: 250px;
+  }
+}
+
+.profil_card__me__container:hover .profil_card__me__container__inner--img {
+  transform: translateY(0) scale(1.2);
+}
+
+
+.profil_card__me__divider {
+  background-color: vars.$border;
+  height: 2px;
+  width: 160px;
+}
+
+.profil_card__me__name {
+  color: vars.$white;
+  font-size: 36px;
+  font-weight: 600;
+  margin-top: 16px;
+  text-align: center;
+}
+
+.profil_card__me__title {
+  color: vars.$white;
+  font-size: 14px;
+  font-style: italic;
+  margin-top: 4px;
+}
+
+.footer__social {
+  width: 8em;
+  height: 3em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 500;
+  margin-top: 2em;
+}
+
+.footer__social__link {
+  display: block;
+  height: 100%;
+  color: vars.$border;
+
+  &--icon {
+    height: 2em;
+    width: 2em;
+
+    &:hover {
+      color: vars.$color_green;
+      transform: scale(1.1);
+    }
+  }
+}

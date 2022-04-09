@@ -7,25 +7,39 @@ import './styles.scss';
 
 // Composants
 import SearchBar from '../SearchBar';
-import ReposResults from '../ReposResults';
+import ReposList from '../ReposList';
 
-// == Composant
-function RepoSearch() {
+// == Composan
+function MainSearch() {
+  // Contient un tableau d'objet correspondant aux résultats de la recherche de l'utilisateur
   const [reposList, setReposList] = useState([]);
+  // Contient un nombre correspondant au total de résultat
   const [resultTotal, setResultTotalt] = useState(0);
+  // Permet d'afficher le message de succes, d'erreur ou de chargement
+  const [resultStatus, setResultStatus] = useState({ succes: false, loading: false, error: false });
+  // Permet la pagination des résultats
   const [activeResultPage, setActiveResultPage] = useState(1);
   const [totalPage, setTotalPages] = useState(1);
-  const [resultStatus, setResultStatus] = useState({ succes: false, loading: false, error: false });
+  // Valeur de l'input de recherche
   const [inputValue, setInputValue] = useState('');
+  // Permet de conditionner certain affichage en fonction de la présence ou non de résultat
   const [isResult, setIsResult] = useState(false);
 
+  /**
+   * Effectue un requette à l'api GitHub avec l'input utilisateur
+   * Initialise les valeurs de state correspondantes
+   */
   const loadRepos = () => {
+    // Lance la requette uniqument si un input est fourni
     if (inputValue !== '') {
+      // Par defaut, lance le message de chargement
       setResultStatus({ succes: false, loading: true, error: false });
       axios
         .get(`https://api.github.com/search/repositories?q=${inputValue}&sort=stars&order=desc&page=${activeResultPage}&per_page=12`)
         .then((response) => {
+          // Par defaut, lance le message de d'erreur
           setResultStatus({ succes: false, loading: false, error: true });
+          // Si la requette renvoie au moins 1 résultat alors set du state
           if (response.data.total_count > 0) {
             setResultStatus({ succes: true, loading: false, error: false });
             setReposList(response.data.items);
@@ -38,7 +52,9 @@ function RepoSearch() {
         });
     }
   };
-
+  /**
+   * Gère la soumission de l'input de recherche
+   */
   const handleSearchSubmit = () => {
     setIsResult(true);
     setReposList([]);
@@ -53,10 +69,12 @@ function RepoSearch() {
     setTotalPages(0);
     setActiveResultPage(1);
     setResultStatus({ succes: false, loading: false, error: false });
-    setInputValue('');
     setIsResult(false);
   };
-
+  /**
+   * S'exectue à chaque changement d'activeResultPage
+   * Permet donc la navigation
+   */
   useEffect(() => {
     loadRepos();
   }, [activeResultPage]);
@@ -69,7 +87,7 @@ function RepoSearch() {
         handleSearchSubmit={handleSearchSubmit}
         handleSearchReset={handleSearchReset}
       />
-      <ReposResults
+      <ReposList
         reposList={reposList}
         resultTotal={resultTotal}
         resultStatus={resultStatus}
@@ -83,4 +101,4 @@ function RepoSearch() {
 }
 
 // == Export
-export default RepoSearch;
+export default MainSearch;

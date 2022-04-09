@@ -1,7 +1,7 @@
 // == Import
 // Npm
 import PropTypes from 'prop-types';
-import { Message, Icon } from 'semantic-ui-react';
+import { Message } from 'semantic-ui-react';
 // Composants
 
 // data, styles et utilitaires

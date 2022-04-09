@@ -8,13 +8,26 @@ import './styles.scss';
 import MessageBar from '../MessageBar';
 
 // == Composant
-function ReposResults({ reposList, resultTotal, resultStatus, isResult, setActiveResultPage, totalPage, activeResultPage }) {
+function ReposList({
+  reposList,
+  resultTotal,
+  resultStatus,
+  isResult,
+  setActiveResultPage,
+  totalPage,
+  activeResultPage,
+}) {
+  function truncate(str, n) {
+    return (str.length > n) ? `${str.substr(0, n - 1)}...` : str;
+  }
   return (
     <>
-      {!isResult && (<div className="search__message">
-        <Icon name="heart" />
-        Effectuer un recherche pour afficher la liste de dépôts GitHub correspondant
-      </div>)}
+      {!isResult && (
+        <div className="search__message">
+          <Icon name="heart" />
+          Effectuer une recherche pour afficher la liste de dépôts GitHub correspondant
+        </div>
+      )}
       {isResult && (
         <>
           <MessageBar resultTotal={resultTotal} resultStatus={resultStatus} />
@@ -31,7 +44,7 @@ function ReposResults({ reposList, resultTotal, resultStatus, isResult, setActiv
                           {repo.owner.login}
                         </Card.Meta>
                         <Card.Description>
-                          {repo.description}
+                          {truncate(repo.description, 100)}
                         </Card.Description>
                       </Card.Content>
                       <Card.Content extra className="card__social">
@@ -45,9 +58,9 @@ function ReposResults({ reposList, resultTotal, resultStatus, isResult, setActiv
                 }
               </div>
               <div className="result__nav">
-                {(activeResultPage > 1) && <Button content='Précédante' inverted onClick={() => setActiveResultPage(activeResultPage - 1)} />}
+                {(activeResultPage > 1) && <Button content="Précédante" inverted onClick={() => setActiveResultPage(activeResultPage - 1)} />}
                 Page {activeResultPage} / {totalPage}
-                {(activeResultPage < totalPage) && <Button content='Suivante' inverted onClick={() => setActiveResultPage(activeResultPage + 1)} />}
+                {(activeResultPage < totalPage) && <Button content="Suivante" inverted onClick={() => setActiveResultPage(activeResultPage + 1)} />}
               </div>
             </>
           )}
@@ -57,7 +70,7 @@ function ReposResults({ reposList, resultTotal, resultStatus, isResult, setActiv
   );
 }
 
-ReposResults.propTypes = {
+ReposList.propTypes = {
   reposList: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
@@ -81,4 +94,4 @@ ReposResults.propTypes = {
 };
 
 // == Export
-export default ReposResults;
+export default ReposList;
