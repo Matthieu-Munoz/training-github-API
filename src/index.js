@@ -15,13 +15,13 @@ const rootComponent = (
   <BrowserRouter>
     <div className="app">
       <header className="app__header">
-        <Button content="Recherche" inverted as={Link} to="/" />
+        <Button content="Recherche" inverted as={Link} to="/usage-api-github/" />
         <Image src={logo} size="mini" centered />
-        <Button content="FAQ" inverted as={Link} to="/faq" />
+        <Button content="FAQ" inverted as={Link} to="/usage-api-github/faq" />
       </header>
       <Routes>
-        <Route path="/" element={<RepoSearch />} />
-        <Route path="/faq" element={<Faq />} />
+        <Route path="/usage-api-github/" element={<RepoSearch />} />
+        <Route path="/usage-api-github/faq" element={<Faq />} />
       </Routes>
     </div>
   </BrowserRouter>
