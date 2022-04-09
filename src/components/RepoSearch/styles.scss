@@ -1,0 +1,9 @@
+@use 'src/styles/vars';
+
+.reposearch {
+  height: 93%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+}
