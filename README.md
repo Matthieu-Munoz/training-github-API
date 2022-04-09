@@ -2,11 +2,11 @@
 
 Dans le cadre de ma formation chez O'Clock, mais surtout de la spécialisation React, j'ai eu à faire ce challenge en l'espace d'une journée.
 
-Résultat attendu            |  Résultat Final
-:-------------------------:|:-------------------------:
-![resultat](docs/resultat.png) |  ![resultat](docs/Resultat%20final.png)
+|        Résultat attendu        |             Résultat Final             |
+| :----------------------------: | :------------------------------------: |
+| ![resultat](docs/resultat.png) | ![resultat](docs/Resultat%20final.png) |
 
-Lien vers le résultat final : [ICI](https://react.semantic-ui.com/)
+Lien vers le résultat final : [ICI](https://matthieu-munoz.github.io/usage-api-github/)
 
 
 **Objectif**
