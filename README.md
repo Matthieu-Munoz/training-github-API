@@ -6,7 +6,7 @@ Dans le cadre de ma formation chez O'Clock, mais surtout de la spécialisation R
 | :----------------------------: | :------------------------------------: |
 | ![résultat](docs/resultat.png) | ![résultat](docs/Resultat%20final.png) |
 
-Lien vers le résultat final : [ICI](https://matthieu-munoz.github.io/training-github-API/)
+Lien vers le résultat final : [ICI](https://github-api.matthieu-munoz.fr)
 
 **Objectif**
 
