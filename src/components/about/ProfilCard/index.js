@@ -9,7 +9,10 @@ import matthieuBg from 'src/assets/images/PP-bg.png';
 // == Composant
 function ProfilCard() {
   return (
-    <>
+    <a
+      href="https://matthieu-Munoz.fr"
+      target="blank"
+    >
       <div className="profil_card__me">
         <div className="profil_card__me__container">
           <div className="profil_card__me__container__inner">
@@ -20,31 +23,31 @@ function ProfilCard() {
         <div className="profil_card__me__divider" />
         <div className="profil_card__me__name">Matthieu</div>
         <div className="profil_card__me__title">Étudiant O'Clock</div>
+        <div className="footer__social">
+          <a
+            href="https://github.com/Matthieu-Munoz"
+            target="blank"
+            className="footer__social__link"
+          >
+            <ion-icon name="logo-github" class="footer__social__link--icon" />
+          </a>
+          <a
+            href="https://twitter.com/Matthieu_Mnz"
+            target="blank"
+            className="footer__social__link"
+          >
+            <ion-icon name="logo-twitter" class="footer__social__link--icon" />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/matthieu-munoz-798b33184/"
+            target="blank"
+            className="footer__social__link"
+          >
+            <ion-icon name="logo-linkedin" class="footer__social__link--icon" />
+          </a>
+        </div>
       </div>
-      <div className="footer__social">
-        <a
-          href="https://github.com/Matthieu-Munoz"
-          target="blank"
-          className="footer__social__link"
-        >
-          <ion-icon name="logo-github" class="footer__social__link--icon" />
-        </a>
-        <a
-          href="https://twitter.com/Thingamabob_me"
-          target="blank"
-          className="footer__social__link"
-        >
-          <ion-icon name="logo-twitter" class="footer__social__link--icon" />
-        </a>
-        <a
-          href="https://www.linkedin.com/in/matthieu-munoz-798b33184/"
-          target="blank"
-          className="footer__social__link"
-        >
-          <ion-icon name="logo-linkedin" class="footer__social__link--icon" />
-        </a>
-      </div>
-    </>
+    </a>
   );
 }
 
